@@ -1,0 +1,33 @@
+# Maven
+target/
+.m2/
+*.war
+*.jar
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git/
+.gitignore
+.github/
+
+# Project
+README.md
+LICENSE
+.env
+*.log
+
+# Build
+*.class
+*.o
+*.so
+
+# Node (if used)
+node_modules/
+npm-debug.log

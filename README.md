@@ -132,7 +132,78 @@ This allows you to immediately test the dashboard, analytics, and filtering feat
 
 ---
 
-## 🧪 Testing the API with Postman
+## 🐳 Docker Deployment
+
+Deploy the Finance Dashboard anywhere using Docker!
+
+### Prerequisites
+- **Docker** installed ([Download here](https://www.docker.com/products/docker-desktop))
+- **Docker Compose** (comes with Docker Desktop)
+
+### Option 1: Build and Run with Docker Compose (Easiest ⭐)
+
+1. **Build the JAR first:**
+   ```bash
+   mvn clean package
+   ```
+
+2. **Run with Docker Compose:**
+   ```bash
+   docker-compose up --build
+   ```
+
+3. **Access the API:**
+   - Local: `http://localhost:8080/api`
+   - Network: `http://<your-ip>:8080/api`
+
+4. **Stop the container:**
+   ```bash
+   docker-compose down
+   ```
+
+### Option 2: Manual Docker Build and Run
+
+1. **Build the JAR:**
+   ```bash
+   mvn clean package
+   ```
+
+2. **Build the Docker image:**
+   ```bash
+   docker build -t finance-dashboard:latest .
+   ```
+
+3. **Run the container:**
+   ```bash
+   docker run -d -p 8080:8080 --name finance-dashboard finance-dashboard:latest
+   ```
+
+4. **View logs:**
+   ```bash
+   docker logs -f finance-dashboard
+   ```
+
+5. **Stop the container:**
+   ```bash
+   docker stop finance-dashboard
+   docker rm finance-dashboard
+   ```
+
+### 📊 Docker Features Included
+
+- ✅ **Health checks** - Automatically restarts if app crashes
+- ✅ **Memory optimization** - Xmx512m, Xms256m JVM settings
+- ✅ **Slim image** - Eclipse Temurin JDK (smaller, faster)
+- ✅ **Auto-restart** - unless-stopped policy
+- ✅ **Docker network** - Isolated, secure communication
+
+### Files Included
+
+- **Dockerfile** - Container image configuration
+- **.dockerignore** - Excludes unnecessary files from build
+- **docker-compose.yml** - Easy one-command deployment
+
+---
 
 ### 📥 Quick Setup: Download Postman
 
@@ -416,11 +487,12 @@ Headers: Authorization: Bearer <admin-token>
 ## 🛠️ Tech Stack
 
 - **Framework**: Spring Boot 3.2.0
-- **Database**: MySQL (or H2 in-memory for testing)
-- **Security**: JWT (JSON Web Tokens)
-- **Authentication**: Spring Security
+- **Database**: H2 (embedded, in-memory)
+- **Security**: JWT (JSON Web Tokens) & Spring Security
 - **ORM**: Hibernate + JPA
 - **Build Tool**: Maven
+- **Containerization**: Docker & Docker Compose
+- **Java**: OpenJDK 17
 
 ---
 
