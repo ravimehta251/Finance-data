@@ -1,5 +1,5 @@
-# Use Eclipse Temurin as base image (modern, well-maintained Java image)
-FROM eclipse-temurin:17-jdk-slim
+# Use Amazon Corretto (production-ready Java image)
+FROM amazoncorretto:17-alpine
 
 # Set working directory
 WORKDIR /app

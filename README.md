@@ -492,7 +492,8 @@ Headers: Authorization: Bearer <admin-token>
 - **ORM**: Hibernate + JPA
 - **Build Tool**: Maven
 - **Containerization**: Docker & Docker Compose
-- **Java**: OpenJDK 17
+- **Java Base Image**: Amazon Corretto:17 (AWS production-grade Java)
+- **Container OS**: Alpine Linux (lightweight)
 
 ---
 
