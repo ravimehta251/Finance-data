@@ -36,10 +36,65 @@ This Spring Boot application helps you:
    ```
 
 4. **Server is ready!**
-   - API Base URL: `http://localhost:8080/api`
+   - **Local Access**: `http://localhost:8080/api` (same computer)
+   - **Network Access**: `http://<your-ip>:8080/api` (from other computers)
    - Database: **H2 embedded** (runs inside the application)
    - All data stored in memory (resets when app restarts)
    - No external database server needed! 🚀
+
+---
+
+## 🌍 Access from Anywhere
+
+The application is configured to accept connections from **any machine** on your network!
+
+### ✅ Cross-Origin Resource Sharing (CORS) Enabled
+
+The API allows requests from **any origin** (domain, IP, etc.):
+- ✅ Works with frontend apps from any domain
+- ✅ All HTTP methods supported (GET, POST, PUT, DELETE, OPTIONS, PATCH)
+- ✅ All headers allowed
+- ✅ Credentials supported
+- ✅ Perfect for cloud deployments and third-party integrations
+
+**Example**: A frontend app on `http://example.com` can call:
+```javascript
+fetch('http://192.168.1.100:8080/api/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username: 'admin', password: 'Admin@123' })
+})
+```
+
+### Find Your Server's IP Address
+
+**On Windows:**
+```powershell
+ipconfig
+# Look for "IPv4 Address" under your network adapter
+# Example: 192.168.1.100
+```
+
+**On Mac/Linux:**
+```bash
+ifconfig
+# Or
+hostname -I
+```
+
+### Access URLs
+
+| Location | URL |
+|----------|-----|
+| **Same Computer** | `http://localhost:8080/api` |
+| **Same Network** | `http://192.168.1.100:8080/api` |
+| **From Anywhere** | `http://<your-public-ip>:8080/api` |
+
+### Example:
+If your IP is `192.168.1.100`, login from another computer:
+```
+POST http://192.168.1.100:8080/api/auth/login
+```
 
 ---
 
