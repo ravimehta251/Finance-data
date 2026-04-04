@@ -16,7 +16,7 @@ This Spring Boot application helps you:
 ### Prerequisites
 - **Java 17+** installed on your computer
 - **Maven 3.6+** for building the project
-- **MySQL database** running (or H2 for in-memory database)
+- ✅ **No external database needed!** (uses H2 embedded database)
 
 ### Step-by-Step Setup
 
@@ -37,7 +37,9 @@ This Spring Boot application helps you:
 
 4. **Server is ready!**
    - API Base URL: `http://localhost:8080/api`
-   - Everything runs automatically - no manual setup needed!
+   - Database: **H2 embedded** (runs inside the application)
+   - All data stored in memory (resets when app restarts)
+   - No external database server needed! 🚀
 
 ---
 
