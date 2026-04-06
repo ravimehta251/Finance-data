@@ -146,20 +146,9 @@ Deploy the Finance Dashboard anywhere using Docker!
    ```bash
    mvn clean package
    ```
-
-2. **Run with Docker Compose:**
-   ```bash
-   docker-compose up --build
-   ```
-
-3. **Access the API:**
+2. **Access the API:**
    - Local: `http://localhost:8080/api`
    - Network: `http://<your-ip>:8080/api`
-
-4. **Stop the container:**
-   ```bash
-   docker-compose down
-   ```
 
 ### Option 2: Manual Docker Build and Run
 
